@@ -1,4 +1,4 @@
-/* Elegant, modern theme for Tic Tac Toe */
+/* Elegant, modern dark theme for Tic Tac Toe */
 QWidget {
   background: qlineargradient(x1:0 y1:0, x2:1 y2:1, stop:0 #0f1724, stop:1 #071b2b);
   color: #e6eef6;
@@ -16,9 +16,18 @@ QPushButton#cell {
   color: #f8fafc;
 }
 
-QPushButton#cell:hover {
+QPushButton#cell:hover:enabled {
   background: qlineargradient(x1:0 y1:0, x2:1 y2:1, stop:0 #1d5764, stop:1 #0f3f4b);
-  transform: scale(1.02);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+QPushButton#cell:focus {
+  border: 2px solid #5ba8c8;
+  outline: none;
+}
+
+QPushButton#cell:disabled {
+  color: #8899aa;
 }
 
 QPushButton#control {
@@ -26,6 +35,15 @@ QPushButton#control {
   border: 1px solid rgba(255,255,255,0.08);
   padding: 8px 14px;
   border-radius: 10px;
+}
+
+QPushButton#control:hover {
+  border: 1px solid rgba(255,255,255,0.20);
+  background: rgba(255,255,255,0.04);
+}
+
+QPushButton#control:focus {
+  border: 2px solid #5ba8c8;
 }
 
 QLabel#status {
@@ -37,9 +55,4 @@ QFrame#boardFrame {
   background: rgba(255,255,255,0.02);
   border-radius: 22px;
   padding: 18px;
-}
-
-/* Subtle glow for winner highlight */
-.winner {
-  box-shadow: 0 0 18px rgba(255,215,0,0.12);
 }
